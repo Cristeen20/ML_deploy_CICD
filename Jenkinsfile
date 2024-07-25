@@ -28,7 +28,7 @@ pipeline {
             steps {
                 script {
                     // Use Windows batch command to deploy application using kubectl
-                    bat 'kubectl apply -f k8s/deployment.yaml'
+                    bat 'kubectl apply -f deployment.yaml'
                 }
             }
         }

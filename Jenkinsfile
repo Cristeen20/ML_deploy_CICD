@@ -20,7 +20,7 @@ pipeline {
             steps {
                 script {
                     // Use Windows batch command to build Docker image
-                    bat 'docker build -t data-analytics-app:latest .'
+                    bat 'docker buildx build data-analytics-app:latest .'
                 }
             }
         }

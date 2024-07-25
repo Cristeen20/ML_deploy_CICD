@@ -4,6 +4,8 @@ pipeline {
     environment {
         KUBECONFIG = "${env.USERPROFILE}\\.kube\\config" // Path to your kubeconfig file
         MINIKUBE_HOME = "${env.USERPROFILE}\\.minikube" // Path to Minikube home directory
+        PATH = "${env.PATH};${env.USERPROFILE}\\.minikube\\bin" // Ensure Minikube binaries are in PATH
+
     }
 
     stages {

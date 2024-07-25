@@ -1,7 +1,22 @@
 pipeline {
     agent any
 
+    environment {
+        KUBECONFIG = "${env.USERPROFILE}\\.kube\\config" // Path to your kubeconfig file
+        MINIKUBE_HOME = "${env.USERPROFILE}\\.minikube" // Path to Minikube home directory
+    }
+
     stages {
+        stage('Start Minikube') {
+            steps {
+                script {
+                    bat 'minikube start --driver=virtualbox' // Change driver if necessary
+                }
+            }
+        }
+
+
+
         stage('Build') {
             steps {
                 script {

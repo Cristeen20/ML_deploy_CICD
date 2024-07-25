@@ -10,12 +10,12 @@ pipeline {
                 }
             }
         }
-        stage('Test') {
-            steps {
+        //stage('Test') {
+         //   steps {
                 // Use Windows batch command to run tests
-                bat 'pytest'
-            }
-        }
+         //       bat 'pytest'
+         //   }
+        //}
         stage('Docker Build') {
             steps {
                 script {

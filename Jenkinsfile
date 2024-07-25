@@ -10,7 +10,7 @@ pipeline {
         stage('Start Minikube') {
             steps {
                 script {
-                    bat 'minikube start --driver=virtualbox' // Change driver if necessary
+                    bat 'minikube start' // Change driver if necessary
                 }
             }
         }

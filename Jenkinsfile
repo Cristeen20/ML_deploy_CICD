@@ -5,29 +5,30 @@ pipeline {
         stage('Build') {
             steps {
                 script {
-                    sh 'pip install -r requirements.txt'
+                    // Use Windows batch command to install dependencies
+                    bat 'pip install -r requirements.txt'
                 }
             }
         }
         stage('Test') {
             steps {
-                script {
-                    sh 'pytest'
-                }
+                // Use Windows batch command to run tests
+                bat 'pytest'
             }
         }
         stage('Docker Build') {
             steps {
                 script {
-                    docker.build('data-analytics-app:latest')
+                    // Use Windows batch command to build Docker image
+                    bat 'docker build -t data-analytics-app:latest .'
                 }
             }
         }
         stage('Deploy to Minikube') {
             steps {
                 script {
-                    // Deploy application using kubectl
-                    sh 'kubectl apply -f k8s/deployment.yaml'
+                    // Use Windows batch command to deploy application using kubectl
+                    bat 'kubectl apply -f k8s/deployment.yaml'
                 }
             }
         }

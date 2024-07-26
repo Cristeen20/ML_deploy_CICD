@@ -16,6 +16,16 @@ pipeline {
                 }
             }
         }
+    
+
+    stage('Enable Storage Provisioner') {
+            steps {
+                script {
+                    // Enable storage-provisioner addon
+                    bat 'minikube addons enable storage-provisioner'
+                }
+            }
+        }
 
 
 

@@ -35,13 +35,6 @@ pipeline {
                 }
             }
         }
-        stage('Deploy to Minikube') {
-            steps {
-                script {
-                    // Use Windows batch command to deploy application using kubectl
-                    bat 'kubectl apply -f deployment.yaml'
-                }
-            }
-        }
+
     }
 }

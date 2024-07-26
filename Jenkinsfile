@@ -8,27 +8,6 @@ pipeline {
 
     }
 
-    stages {
-        stage('Start Minikube') {
-            steps {
-                script {
-                    bat 'minikube start' // Change driver if necessary
-                }
-            }
-        }
-    
-
-    stage('Enable Storage Provisioner') {
-            steps {
-                script {
-                    // Enable storage-provisioner addon
-                    bat 'minikube addons enable storage-provisioner'
-                }
-            }
-        }
-
-
-
         stage('Build') {
             steps {
                 script {
